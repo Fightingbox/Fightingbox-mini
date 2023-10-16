@@ -11,5 +11,4 @@ export default {
 		invalid: '{{pin}} is invalid for this board',
 		used: '{{pin}} is already assigned to another feature',
 	},
-	'all-capture-button-label': 'Assign Gamepad Pins\u00A0\u00A0🎮',
 };

@@ -148,6 +148,7 @@ void TiltInput::preprocess()
 
 void TiltInput::process()
 {
+	const AddonOptions& options = Storage::getInstance().getAddonOptions();
 	SOCDTiltClean(tiltSOCDMode);
 
 	Gamepad* gamepad = Storage::getInstance().GetGamepad();

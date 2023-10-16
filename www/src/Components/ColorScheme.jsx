@@ -55,7 +55,7 @@ const ColorScheme = () => {
 			<Dropdown.Menu>
 				{translatedDropdownOptions.map((option) => (
 					<Dropdown.Item
-						key={option.scheme}
+						key={option.theme}
 						as={'button'}
 						className={savedColorScheme === option.scheme ? 'active' : ''}
 						onClick={() => setThemeAndState(option.scheme)}

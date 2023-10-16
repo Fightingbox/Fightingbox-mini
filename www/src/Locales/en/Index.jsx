@@ -12,7 +12,6 @@ import CustomTheme from './CustomTheme';
 import BackupPage from './BackupPage';
 import DisplayConfig from './DisplayConfig';
 import AddonsConfig from './AddonsConfig';
-import CaptureButton from './CaptureButton';
 
 export default {
 	Common,
@@ -29,5 +28,4 @@ export default {
 	BackupPage,
 	DisplayConfig,
 	AddonsConfig,
-	CaptureButton,
 };

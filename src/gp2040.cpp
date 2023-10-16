@@ -138,6 +138,7 @@ void GP2040::run() {
 		Storage::getInstance().performEnqueuedSaves();
 		// Config Loop (Web-Config does not require gamepad)
 		if (configMode == true) {
+			ConfigManager& configManager = ConfigManager::getInstance();
 			ConfigManager::getInstance().loop();
 
 			gamepad->read();
@@ -159,11 +160,11 @@ void GP2040::run() {
 	#if GAMEPAD_DEBOUNCE_MILLIS > 0
 		gamepad->debounce();
 	#endif
-		// Pre-Process add-ons for MPGS
-		addons.PreprocessAddons(ADDON_PROCESS::CORE0_INPUT);
-
 		gamepad->hotkey(); 	// check for MPGS hotkeys
 		rebootHotkeys.process(gamepad, configMode);
+
+		// Pre-Process add-ons for MPGS
+		addons.PreprocessAddons(ADDON_PROCESS::CORE0_INPUT);
 		
 		gamepad->process(); // process through MPGS
 

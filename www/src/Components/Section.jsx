@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { AppContext } from '../Contexts/AppContext';
 import './Section.scss';
 
-const Section = ({ children, title }) => {
+const Section = ({ children, title, ...props }) => {
 	const { loading } = useContext(AppContext);
 	const { t } = useTranslation('');
 
 	return (
-		<div className={`card`}>
-			<div className={`card-header`}>
+		<div className={`card ${props.className}`}>
+			<div className={`card-header ${props.titleClassName}`}>
 				<strong>{title}</strong>
 			</div>
 			<div className="card-body">

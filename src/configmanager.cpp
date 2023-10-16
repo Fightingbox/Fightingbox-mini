@@ -5,9 +5,11 @@
 #include "addons/neopicoleds.h"
 
 void ConfigManager::setup(ConfigType config) {
-	if (config == CONFIG_TYPE_WEB)
-		setupConfig(new WebConfig());
-
+	switch(config) {
+		case CONFIG_TYPE_WEB:
+			setupConfig(new WebConfig());
+			break;
+	}
     this->cType = config;
 }
 
