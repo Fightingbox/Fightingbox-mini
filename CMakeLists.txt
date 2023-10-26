@@ -15,7 +15,7 @@ endif()
 # Uncomment the next line for an unomptimized build for debugging. Use in conjunction with the Debug build type.
 # set(PICO_DEOPTIMIZED_DEBUG 1)
 
-project(GP2040-CE LANGUAGES C CXX ASM VERSION 0.7.4)
+project(GP2040-CE LANGUAGES C CXX ASM VERSION 0.7.5)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -157,6 +157,7 @@ src/addons/reverse.cpp
 src/addons/turbo.cpp
 src/addons/slider_socd.cpp
 src/addons/wiiext.cpp
+src/addons/input_macro.cpp
 src/addons/snes_input.cpp
 src/gamepad/GamepadDebouncer.cpp
 src/gamepad/GamepadDescriptors.cpp
@@ -168,7 +169,7 @@ ${PROTO_OUTPUT_DIR}/config.pb.c
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME}_${CMAKE_PROJECT_VERSION}_${GP2040_BOARDCONFIG})
 
 pico_set_program_name(GP2040-CE "GP2040-CE")
-pico_set_program_version(GP2040-CE "0.7.4")
+pico_set_program_version(GP2040-CE "0.7.5")
 
 target_link_libraries(${PROJECT_NAME}
 pico_stdlib
@@ -203,6 +204,8 @@ ${PROTO_OUTPUT_DIR}
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC
   PICO_XOSC_STARTUP_DELAY_MULTIPLIER=64
+  BOARD_CONFIG_FILE_NAME="$<TARGET_FILE_BASE_NAME:${PROJECT_NAME}>"
+  GP2040_BOARDCONFIG="${GP2040_BOARDCONFIG}"
 )
 
 target_include_directories(${PROJECT_NAME}  PRIVATE
