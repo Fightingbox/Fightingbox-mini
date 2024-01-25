@@ -210,6 +210,11 @@ private:
 	void drawFightboardMirrored(int startX, int startY, int buttonRadius, int buttonPadding);
 	void drawFightboardStick(int startX, int startY, int buttonRadius, int buttonPadding);
 	void drawFightboardStickMirrored(int startX, int startY, int buttonRadius, int buttonPadding);
+
+	void drawFightingBoxMiniWASD(int startX, int startY, int buttonRadius, int buttonPadding);
+	void drawFightingBoxButtons(int startX, int startY, int buttonRadius, int buttonPadding);
+	
+
 	bool pressedUp();
 	bool pressedDown();
 	bool pressedLeft();
